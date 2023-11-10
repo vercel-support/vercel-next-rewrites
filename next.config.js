@@ -9,16 +9,6 @@ const nextConfig = {
   },
   async rewrites() {
     return {
-      beforeFiles: [
-        {
-          source: '/sitemap.xml',
-          destination: '/sitemap/',
-        },
-        {
-          source: '/sitemap-2.xml',
-          destination: '/sitemap/2',
-        },
-      ],
       fallback: [
         {
           source: '/:path*',

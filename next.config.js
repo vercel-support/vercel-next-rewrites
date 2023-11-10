@@ -21,16 +21,8 @@ const nextConfig = {
       ],
       fallback: [
         {
-          // us is default, so no folder on destination
-          source: '/:locale(us)/:path*',
-          locale: false,
+          source: '/:path*',
           destination: `${FALLBACK_SITE}/:path*`,
-        },
-        {
-          // anything except french (fr) and german (de) as they are proxied to Smartling
-          source: '/:locale(uk|jp|au|ca)/:path*',
-          locale: false,
-          destination: `${FALLBACK_SITE}/:locale/:path*`,
         },
       ],
     };

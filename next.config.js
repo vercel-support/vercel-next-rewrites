@@ -1,4 +1,4 @@
-const FALLBACK_SITE = 'https://dialpad-cms-staging.appspot.com';
+const FALLBACK_SITE = 'https://dialpad.sl.smartling.com';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -11,8 +11,9 @@ const nextConfig = {
     return {
       fallback: [
         {
-          source: '/:path*',
-          destination: `${FALLBACK_SITE}/:path*/`,
+          source: '/fr/:path*',
+          locale: false,
+          destination: `${FALLBACK_SITE}/fr/:path*`,
         },
       ]
     }

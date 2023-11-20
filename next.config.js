@@ -8,12 +8,14 @@ const nextConfig = {
     localeDetection: false,
   },
   async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: `${FALLBACK_SITE}/:path*`,
-      },
-    ]
+    return {
+      fallback: [
+        {
+          source: '/:path*',
+          destination: `${FALLBACK_SITE}/:path*/`,
+        },
+      ]
+    }
   },
 }
 

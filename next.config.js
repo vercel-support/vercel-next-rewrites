@@ -3,7 +3,7 @@ const FALLBACK_SITE = 'https://dialpad-cms-staging.appspot.com';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n: {
-    locales: ['us', 'uk', 'ca', 'au', 'jp'],
+    locales: ['us', 'uk', 'ca', 'au', 'jp', 'fr'],
     defaultLocale: 'us',
     localeDetection: false,
   },

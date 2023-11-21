@@ -4,7 +4,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 export default async function middleware(request: NextRequest) {
 
-  console.log(request.headers);
+  console.log(request.headers.get('host'));
   
 
   if (!smartlingLocales.includes(request.nextUrl.locale)) {

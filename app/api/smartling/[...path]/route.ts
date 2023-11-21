@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
       headers,
     });
 
-    return response;
+    return NextResponse.json(response.data);
   } catch (error: Error | any) {
     console.error('Proxy request error:', error.message);
     return NextResponse.error();

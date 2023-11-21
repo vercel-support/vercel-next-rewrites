@@ -6,9 +6,9 @@ export default async function middleware(request: NextRequest) {
 
   console.log(request);
 
-  if (!smartlingLocales.includes(request.nextUrl.locale)) {
-    return NextResponse.next();
-  }
+  // if (!smartlingLocales.includes(request.nextUrl.locale)) {
+  //   return NextResponse.next();
+  // }
 
   const headers = new Headers(request.headers);
   // this is for Smartling to work

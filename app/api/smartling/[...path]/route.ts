@@ -1,12 +1,24 @@
-import { createProxyMiddleware } from 'http-proxy-middleware';
+import axios from "axios";
+import { NextRequest, NextResponse } from "next/server";
 
 const FALLBACK_SITE = 'https://nodejs--miguelnavarro8.repl.co';
 
-const GET = createProxyMiddleware({
-  target: FALLBACK_SITE,
-  changeOrigin: true,
-  pathRewrite: { '^/api/smartling/': '/' },
-  xfwd: true,
-});
+export default async function GET(request: NextRequest) {
+  try {
 
-export default GET;
+    const headers = {
+      'Host': request.nextUrl.hostname,
+      'x-tested': request.nextUrl.hostname,
+    };
+
+    const response = await axios.get(`${FALLBACK_SITE}${request.url}`, {
+      headers,
+    });
+
+    return response;
+  } catch (error: Error | any) {
+    console.error('Proxy request error:', error.message);
+    return NextResponse.error();
+  }
+}
+

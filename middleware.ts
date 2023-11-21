@@ -24,7 +24,7 @@ export default async function middleware(request: NextRequest) {
     });
     console.log(response);
   } catch (error) {
-    console.log(error);
+    console.log(JSON.stringify(error));
     response = Response.json(null, { status: 404 });
   }
 

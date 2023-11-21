@@ -9,9 +9,8 @@ export default createProxyMiddleware({
   xfwd: true,
 });
 
-// export const config = {
-//   api: {
-//     bodyParser: false, // enable POST requests
-//     externalResolver: true, // hide warning message
-//   },
-// };
+export const config = {
+  api: {
+    externalResolver: true, // hide warning message
+  },
+};

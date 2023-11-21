@@ -1,4 +1,4 @@
-const FALLBACK_SITE = 'https://dialpad.sl.smartling.com';
+const FALLBACK_SITE = 'https://nodejs--miguelnavarro8.repl.co';
 
 import { NextResponse, type NextRequest } from 'next/server';
 
@@ -9,7 +9,7 @@ export default async function middleware(request: NextRequest) {
   }
 
   const headers = new Headers(request.headers);
-  headers.set('Host', 'www.dialpadbeta.com');
+  headers.set('host', 'www.dialpadbeta.com');
 
   const proxyUrl = `${FALLBACK_SITE}/${request.nextUrl.locale}${request.nextUrl.pathname}`;
   console.log(proxyUrl);

@@ -1,4 +1,4 @@
-const FALLBACK_SITE = 'https://dialpad-cms-staging.appspot.com';
+const FALLBACK_SITE = 'https://nodejs--miguelnavarro8.repl.co';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

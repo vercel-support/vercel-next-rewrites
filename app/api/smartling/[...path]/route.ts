@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const FALLBACK_SITE = 'https://nodejs--miguelnavarro8.repl.co';
 
-export default async function GET(request: NextRequest) {
+export async function GET(request: NextRequest) {
   try {
 
     const headers = {

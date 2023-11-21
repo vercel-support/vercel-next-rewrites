@@ -7,6 +7,7 @@ const nextConfig = {
     defaultLocale: 'us',
     localeDetection: false,
   },
+  trailingSlash: true,
   async rewrites() {
     return {
       fallback: [

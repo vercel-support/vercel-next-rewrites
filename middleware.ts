@@ -31,4 +31,4 @@ export default async function middleware(request: NextRequest) {
   return response;
 }
 
-const smartlingLocales = ['fr', 'de'];
+const smartlingLocales = ['de'];

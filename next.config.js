@@ -12,9 +12,9 @@ const nextConfig = {
     return {
       fallback: [
         {
-          source: '/ca/:path*',
+          source: '/fr/:path*',
           locale: false,
-          destination: `${FALLBACK_SITE}/ca/:path*`,
+          destination: `${FALLBACK_SITE}/fr/:path*`,
         },
       ]
     }

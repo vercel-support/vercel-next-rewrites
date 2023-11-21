@@ -1,40 +1,34 @@
-const FALLBACK_SITE = 'https://dialpad-cms-staging.appspot.com';
+const FALLBACK_SITE = 'https://dialpad.sl.smartling.com';
 
 import { NextResponse, type NextRequest } from 'next/server';
 
 export default async function middleware(request: NextRequest) {
 
-  console.log(request);
-
-  // if (!smartlingLocales.includes(request.nextUrl.locale)) {
-  //   return NextResponse.next();
-  // }
+  if (!smartlingLocales.includes(request.nextUrl.locale)) {
+    return NextResponse.next();
+  }
 
   const headers = new Headers(request.headers);
-  // this is for Smartling to work
-  // headers.set('Host', 'www.dialpadbeta.com');
-  headers.set('x-forwarded-host', 'www.dialpadbeta.com');
+  headers.set('Host', 'www.dialpadbeta.com');
 
-  return NextResponse.next({
-    request: {
+  const proxyUrl = `${FALLBACK_SITE}/${request.nextUrl.locale}${request.nextUrl.pathname}`;
+  console.log(proxyUrl);
+  
+  let response;
+
+  try {
+    response = await fetch(proxyUrl, {
+      method: request.method,
       headers,
-    },
-  })
+      body: request.body,
+    });
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+    response = Response.json(null, { status: 404 });
+  }
 
-  // const proxyUrl = `${FALLBACK_SITE}/${request.nextUrl.locale}${request.nextUrl.pathname}`;
-  // let response;
-
-  // try {
-  //   response = await fetch(proxyUrl, {
-  //     method: 'GET',
-  //     headers
-  //   });
-  // } catch (error) {
-  //   console.log(error);
-  //   response = Response.json(null, { status: 404 });
-  // }
-
-  // return response;
+  return response;
 }
 
 const smartlingLocales = ['fr', 'de'];

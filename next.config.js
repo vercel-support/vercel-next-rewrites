@@ -14,7 +14,7 @@ const nextConfig = {
         {
           source: '/fr/:path*',
           locale: false,
-          destination: `${FALLBACK_SITE}/fr/:path*`,
+          destination: `/api/smartling/fr/:path*`,
         },
       ]
     }

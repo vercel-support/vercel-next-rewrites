@@ -12,7 +12,7 @@ export default async function middleware(request: NextRequest) {
 
   const headers = new Headers(request.headers);
   // this is for Smartling to work
-  headers.set('Host', 'www.dialpadbeta.com');
+  // headers.set('Host', 'www.dialpadbeta.com');
   headers.set('x-forwarded-host', 'www.dialpadbeta.com');
 
   return NextResponse.next({

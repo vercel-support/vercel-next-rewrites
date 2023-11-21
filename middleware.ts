@@ -4,12 +4,15 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 export default async function middleware(request: NextRequest) {
 
+  console.log(request.headers);
+  
+
   if (!smartlingLocales.includes(request.nextUrl.locale)) {
     return NextResponse.next();
   }
 
   const headers = new Headers(request.headers);
-  headers.set('Host', 'www.dialpadbeta.com');
+  headers.set('host', 'www.dialpadbeta.com');
   headers.set('x-forwarded-host', 'www.dialpadbeta.com');
 
   const proxyUrl = `${FALLBACK_SITE}/${request.nextUrl.locale}${request.nextUrl.pathname}`;

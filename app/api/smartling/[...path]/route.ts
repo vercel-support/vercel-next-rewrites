@@ -11,6 +11,7 @@ export async function GET(request: NextRequest) {
       'x-tested': request.nextUrl.hostname,
     };
 
+    console.log(`${FALLBACK_SITE}${request.url}`)
     const response = await axios.get(`${FALLBACK_SITE}${request.url}`, {
       headers,
     });

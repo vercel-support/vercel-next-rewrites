@@ -1,5 +1,3 @@
-const FALLBACK_SITE = 'https://nodejs--miguelnavarro8.repl.co';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n: {

@@ -10,11 +10,17 @@ const nextConfig = {
   trailingSlash: true,
   async rewrites() {
     return {
-      fallback: [
+      beforeFiles: [
         {
-          source: '/fr/:path*',
+          source: '/us/:path+',
           locale: false,
-          destination: `/api/smartling/fr/:path*`,
+          destination: `https://www.dialpad.com/:path+`,
+          missing: [
+            {
+              type: 'header',
+              key: 'x-rewrite-exclude'
+            }
+          ]
         },
       ]
     }

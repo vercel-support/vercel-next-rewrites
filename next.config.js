@@ -12,7 +12,7 @@ const nextConfig = {
         {
           source: '/us/:path+',
           locale: false,
-          destination: 'https://www.dialpad.com/:path+',
+          destination: 'https://dialpad-cms-staging.appspot.com/:path+',
           missing: [
             {
               type: 'header',

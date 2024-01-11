@@ -10,9 +10,9 @@ const nextConfig = {
     return {
       beforeFiles: [
         {
-          source: '/us/:path+',
+          source: '/us/:path+/',
           locale: false,
-          destination: 'https://dialpad-cms-staging.appspot.com/:path+',
+          destination: 'https://dialpad-cms-staging.appspot.com/:path+/',
           missing: [
             {
               type: 'header',

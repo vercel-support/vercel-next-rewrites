@@ -17,7 +17,7 @@ export async function middleware(request: NextRequest) {
       });
     }
 
-  return response;
+  return response || NextResponse.next();
 }
 
 export const config = {

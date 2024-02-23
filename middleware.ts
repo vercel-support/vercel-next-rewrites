@@ -11,7 +11,7 @@ export async function middleware(request: NextRequest) {
       response = NextResponse.next({
         request: {
           headers: new Headers({
-            'x-rewrite-exclude': 'true'
+            'x-rewrite-exclude': '1'
           })
         }
       });

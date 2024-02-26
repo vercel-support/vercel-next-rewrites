@@ -7,7 +7,7 @@ export async function middleware(request: NextRequest) {
   const fullPathname = `/${locale}${pathname}`;
   let response;
 
-  if (['/us/ai-meetings/'].includes(fullPathname)) {
+  if (['/us/products/'].includes(fullPathname)) {
     response = NextResponse.next({
       request: {
         headers: new Headers({

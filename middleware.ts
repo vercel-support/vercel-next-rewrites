@@ -8,14 +8,14 @@ export async function middleware(request: NextRequest) {
   let response;
 
   if (['/us/ai-meetings/'].includes(fullPathname)) {
-      response = NextResponse.next({
-        request: {
-          headers: new Headers({
-            'x-rewrite-exclude': 'true'
-          })
-        }
-      });
-    }
+    response = NextResponse.next({
+      request: {
+        headers: new Headers({
+          'x-rewrite-exclude': 'true'
+        })
+      }
+    });
+  }
 
   return response || NextResponse.next();
 }

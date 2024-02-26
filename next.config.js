@@ -12,7 +12,7 @@ const nextConfig = {
         {
           source: '/us/:path+/',
           locale: false,
-          destination: 'https://www.dialpad.com/:path+/',
+          destination: 'https://about.google/:path+/',
           missing: [
             {
               type: 'header',

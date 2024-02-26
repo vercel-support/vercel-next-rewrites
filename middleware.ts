@@ -9,9 +9,6 @@ export async function middleware(request: NextRequest) {
 
   if (['/us/products/'].includes(fullPathname)) {
     response = NextResponse.next({
-      headers: new Headers({
-        'x-rewrite-exclude': 'true'
-      }),
       request: {
         headers: new Headers({
           'x-rewrite-exclude': 'true'
